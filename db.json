@@ -1,31 +1,8 @@
 {
   "product": [
     {
-      "name": "Chien Tran",
-      "price": "18.000.000.000",
-      "quantity": "111",
-      "categoryId": "1",
-      "img": "http://res.cloudinary.com/fpta2/image/upload/v1649665813/gjl30noqxnmamaoov1rs.png",
-      "id": 9
-    },
-    {
-      "name": "Giày Nike PhanTomG17",
-      "price": "300000",
-      "quantity": "1",
-      "categoryId": "1",
-      "id": 10
-    },
-    {
-      "name": "G",
-      "price": "20000",
-      "quantity": "2",
-      "categoryId": "2",
-      "img": "http://res.cloudinary.com/fpta2/image/upload/v1649691736/zlecqwwvjpqamvercmlq.png",
-      "id": 11
-    },
-    {
       "name": "Bóng Adidas",
-      "price": "999",
+      "price": "999 $",
       "quantity": "2",
       "categoryId": "2",
       "img": "http://res.cloudinary.com/fpta2/image/upload/v1649692162/nzgigeczldoy8ajffhzd.jpg",
@@ -38,6 +15,22 @@
       "categoryId": "1",
       "img": "http://res.cloudinary.com/fpta2/image/upload/v1649692266/adm2fq1obsfnhf7ewdbp.jpg",
       "id": 13
+    },
+    {
+      "name": "Giày PhanTom",
+      "price": "399999",
+      "quantity": "1",
+      "categoryId": "1",
+      "img": "http://res.cloudinary.com/fpta2/image/upload/v1649921749/pcp9w7azi8xrvmrpmnfs.jpg",
+      "id": 14
+    },
+    {
+      "name": "Bóng Động Lực S12",
+      "price": "499.000",
+      "quantity": "1",
+      "categoryId": "2",
+      "img": "http://res.cloudinary.com/fpta2/image/upload/v1649921848/minc9jiw9inakjyiqere.jpg",
+      "id": 15
     }
   ],
   "category": [

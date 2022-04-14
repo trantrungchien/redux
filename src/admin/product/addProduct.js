@@ -13,7 +13,6 @@ const AddProduct = () => {
   const category = useSelector(data => data.category.value)
   useEffect(() => {
     dispatch(getCategorys())
-
   }, []);
   const { register, handleSubmit, formState: { erorrs }, reset } = useForm()
   const navigate = useNavigate()
@@ -25,7 +24,6 @@ const AddProduct = () => {
   const InputImage = async (e)=>{
     const file = e.target.files[0];
           const CLOUDINARY_API = " https://api.cloudinary.com/v1_1/fpta2/image/upload";
-
           const formData = new FormData();
 
           formData.append("file", file);

@@ -1,9 +1,15 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { listProducts } from '../features/Product/ProductSlice';
 
 const HomePage = () => {
   const product = useSelector(data => data.product.value)
+  const dispash = useDispatch()
+  useEffect(() => {
+    dispash(listProducts())
 
+
+  }, []);
   return (
     <div className="bg-white">
       {/* header */}
@@ -29,69 +35,68 @@ const HomePage = () => {
               </div>
             </div>
             <div className="w-full h-48 sm:h-64 lg:absolute lg:top-0 lg:right-0 lg:w-1/2 lg:h-full">
-              <img src="https://res.cloudinary.com/fpta2/image/upload/v1649761327/1_l2bwed.jpg" alt className="w-full h-full object-center object-cover" />
+              <img src="https://res.cloudinary.com/fpta2/image/upload/v1649761052/ads4_v9jcms.jpg" alt className="w-full h-full	 object-center object-cover" />
             </div>
           </div>
         </div>
         {/* Trending products------------------------------------------------------------------------------------------ */}
-        <section aria-labelledby="trending-heading" className="bg-white">
-          <div className="py-16 sm:py-24 lg:max-w-7xl lg:mx-auto lg:py-32 lg:px-8">
-            <div className="px-4 flex items-center justify-between sm:px-6 lg:px-0">
-              <h2 id="trending-heading" className="text-2xl font-extrabold tracking-tight text-gray-900">Trending products</h2>
-              <a href="#" className="hidden sm:block text-sm font-semibold text-indigo-600 hover:text-indigo-500">See everything<span aria-hidden="true"> →</span></a>
-            </div>
-            <div className="mt-8 relative">
-              <div className="relative w-full overflow-x-auto">
-                <ul role="list" className="mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:space-x-0 lg:grid lg:grid-cols-4 lg:gap-x-8">
-                  <li className="w-64 inline-flex flex-col text-center lg:w-auto">
-                    <div className="group relative">
+        <div className="bg-white">
+      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h2 className="text-xl font-bold text-gray-900">Sản Phẩm</h2>
+        <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
 
-                      <div className="relative">
-                        <div className="relative w-full h-72 rounded-lg overflow-hidden">
-                          <img src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg" alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls." className="w-full h-full object-center object-cover" />
-                        </div>
-                        <div className="relative mt-4">
-                          <h3 className="text-sm font-medium text-gray-900">Zip Tote Basket</h3>
-                          <p className="mt-1 text-sm text-gray-500">White and black</p>
-                        </div>
-                        <div className="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden">
-                          <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
-                          <p className="relative text-lg font-semibold text-white">$140</p>
-                        </div>
-                      </div>
-                    </div>
-
-                  </li>
-                </ul>
-
+          {product?.map((item, index) => {
+            return <div key={index}>
+              <div className="relative">
+                <div className="relative w-full h-72 rounded-lg overflow-hidden">
+                  <img src={`${item.img}`} alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls." className="w-full h-full object-center object-cover" />
+                </div>
+                <div className="relative mt-4">
+                  <h3 className="text-sm font-medium text-gray-900">{item.name}</h3>
+                  
+                </div>
+                <div className="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden">
+                  <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
+                  <p className="relative text-lg font-semibold text-white">{item.price}</p>
+                </div>
               </div>
-            </div>
-            <div className="mt-12 px-4 sm:hidden">
+              <div className="mt-6">
+                <a href="#" className="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200">Add to bag<span className="sr-only">, Zip Tote Basket</span></a>
+              </div>
+              <div className="mt-12 px-4 sm:hidden">
               <a href="#" className="text-sm font-semibold text-indigo-600 hover:text-indigo-500">See everything<span aria-hidden="true"> →</span></a>
             </div>
-          </div>
-        </section>
+            </div>
+
+          })}
+
+          {/* More products... */}
+        </div>
+      </div>
+    </div>
+           
+          
         {/* Collections */}
         <section aria-labelledby="collections-heading" className="bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto py-16 sm:py-24 lg:py-32 lg:max-w-none">
-              <h2 id="collections-heading" className="text-2xl font-extrabold text-gray-900">Collections</h2>
+              <h2 id="collections-heading" className="text-2xl font-extrabold text-gray-900">Sản Phẩm Liên Quan</h2>
               <div className="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
                 <div className="group relative">
                   <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="w-full h-full object-center object-cover" />
+                    <img src="https://res.cloudinary.com/fpta2/image/upload/v1649922100/ads5_xrtsrq.jpg" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="w-full h-full object-center object-cover" />
                   </div>
                   <h3 className="mt-6 text-sm text-gray-500">
                     <a href="#">
                       <span className="absolute inset-0" />
-                      Desk and Office
+                      X Ghosted Peregrine Speed
                     </a>
                   </h3>
                   <p className="text-base font-semibold text-gray-900">Work from home accessories</p>
                 </div>
                 <div className="group relative">
                   <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg" alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant." className="w-full h-full object-center object-cover" />
+                    <img src="https://res.cloudinary.com/fpta2/image/upload/v1649922101/ad7_en1rdh.jpg" alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant." className="w-full h-full object-center object-cover" />
                   </div>
                   <h3 className="mt-6 text-sm text-gray-500">
                     <a href="#">
@@ -103,7 +108,7 @@ const HomePage = () => {
                 </div>
                 <div className="group relative">
                   <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg" alt="Collection of four insulated travel bottles on wooden shelf." className="w-full h-full object-center object-cover" />
+                    <img src="https://res.cloudinary.com/fpta2/image/upload/v1649761053/adidas1_milvci.jpg" alt="Collection of four insulated travel bottles on wooden shelf." className="w-full h-full object-center object-cover" />
                   </div>
                   <h3 className="mt-6 text-sm text-gray-500">
                     <a href="#">

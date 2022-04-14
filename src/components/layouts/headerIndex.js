@@ -12,9 +12,9 @@ const HeaderIndex = () => {
             Get free delivery on orders over $100
           </p>
           <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-            <a href="#" className="text-sm font-medium text-white hover:text-gray-100">Create an account</a>
+            <a href="#" className="text-sm font-medium text-white hover:text-gray-100">Bạn Chưa Có Tài Khoản ?</a>
             <span className="h-6 w-px bg-gray-600" aria-hidden="true" />
-            <a href="#" className="text-sm font-medium text-white hover:text-gray-100">Sign in</a>
+            <a href="#" className="text-sm font-medium text-white hover:text-gray-100">Đăng Nhập</a>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@ const HeaderIndex = () => {
               <div className="hidden lg:flex lg:items-center">
                 <a href="#">
                   
-                  <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600" alt />
+                  <img className="h-8 w-auto" src="https://res.cloudinary.com/fpta2/image/upload/v1649903189/The-Trefoil-adidas-logo-1_uj9nyu.jpg" alt />
                 </a>
               </div>
               <div className="hidden h-full lg:flex">
@@ -33,21 +33,23 @@ const HeaderIndex = () => {
                   <div className="h-full flex justify-center space-x-8">
                     <div className="flex">
                       <div className="relative flex">
-                        <a href='/ProducPage' type="button" className="border-transparent text-gray-700 hover:text-gray-800 relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px" aria-expanded="false">
-                          Women
+                        <a href='/' type="button" className="border-transparent text-gray-700 hover:text-gray-800 relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px" aria-expanded="false">
+                          Trang Chủ
                         </a>
                       </div>
                     </div>
                     <div className="flex">
                       <div className="relative flex">
-                        <button type="button" className="border-transparent text-gray-700 hover:text-gray-800 relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px" aria-expanded="false">
-                          Men
-                        </button>
+                        <a href='/productPage' className="border-transparent text-gray-700 hover:text-gray-800 relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px" aria-expanded="false">
+                          Sản Phẩm
+                        </a>
                       </div>
                      
                     </div>
-                    <a href="#" className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
-                    <a href="#" className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
+                    <a href="#" className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Tin Tức</a>
+                    <a href="#" className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Liên Hệ</a>
+                    <a href="/admin" className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">ADMIN</a>
+
                   </div>
                 </div>
               </div>
@@ -67,7 +69,7 @@ const HeaderIndex = () => {
               </div>
               <a href="#" className="lg:hidden">
                 <span className="sr-only">Workflow</span>
-                <img src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600" alt className="h-8 w-auto" />
+                <img src="https://res.cloudinary.com/fpta2/image/upload/v1649902975/logoadidas_iyayfo.jpg" alt className="h-8 w-auto" />
               </a>
               <div className="flex-1 flex items-center justify-end">
                 <div className="flex items-center lg:ml-8">
